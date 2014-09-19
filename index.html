@@ -31,8 +31,14 @@
         <option value="val 3">val 3</option>
         <option value="val 4">val 4</option>
     </select>
-
-
+    <button id="SelectItem">Select item 3</button>
+    <br />
+    <button id="unload">unload</button>
+    <br />
+    <input type="text" id="newOption" value=" " />
+    <button id="addOption">Add new option at 2</button>
+    <br />
+    <button id="removeOption">Remove option 2</button>
 
     <script>
 
@@ -43,29 +49,45 @@
                 is_editable: false
             });
 
-            combobox.optionsShowing = function () {
-                alert('showing');
-            };
+            $('#addOption').click(function () {
+                var text = $('#newOption').val();
+                combobox.add("val_" + text, text, 2);
+            });
 
-            combobox.optionsClosing = function () {
-                alert('optionsClosing');
-            };
+            $('#removeOption').click(function () {
+                combobox.remove(2);
+            });
 
-            combobox.optionsClosed = function () {
-                alert('optionsClosed');
-            };
+            $('#SelectItem').click(function () {
+                combobox.selectItem(3);
+            });
+            $('#unload').click(function () {
+                combobox.unload();
+            });
 
-            combobox.optionsShowed = function () {
-                alert('optionsShowed');
-            };
+            //combobox.optionsShowing = function () {
+            //    alert('showing');
+            //};
 
-            combobox.inputFocused = function () {
-                alert('inputFocused');
-            };
+            //combobox.optionsClosing = function () {
+            //    alert('optionsClosing');
+            //};
 
-            combobox.selectedOptionChanged = function () {
-                alert('selectedOptionChanged');
-            };
+            //combobox.optionsClosed = function () {
+            //    alert('optionsClosed');
+            //};
+
+            //combobox.optionsShowed = function () {
+            //    alert('optionsShowed');
+            //};
+
+            //combobox.inputFocused = function () {
+            //    alert('inputFocused');
+            //};
+
+            //combobox.selectedOptionChanged = function () {
+            //    alert('selectedOptionChanged');
+            //};
 
 
             $('#comboboxGetValue').click(function () {

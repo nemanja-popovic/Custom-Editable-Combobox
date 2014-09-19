@@ -71,9 +71,10 @@
 
     .custom-combobox > .comboboxInputControl > input {
         display: block;
+        width:99%;
         height: 18px;
         margin-left: 3px;
-        padding-right: 30px;
+        /*padding-right: 30px;*/
         text-overflow: ellipsis;
         white-space: nowrap;
         overflow: hidden;
@@ -96,8 +97,8 @@
     }
 
         .custom-combobox > .comboboxInputControl > label > i {
-            width: 16px;
-            height: 16px;
+            width: 12px;
+            height: 22px;
             display: block;
             position: absolute;
             top: 0px;
@@ -150,47 +151,39 @@
             max-height: 250px;
         }
 
-        .custom-combobox > .custom-combobox-options.isFloating > .options-elements {
-            max-height: 100%;
-        }
+            .custom-combobox > .custom-combobox-options > .options-elements li {
+                list-style: none;
+            }
 
+            .custom-combobox > .custom-combobox-options > .options-elements > li:first-child {
+                border-radius: 3px 3px 0px 0px;
+            }
 
-        .custom-combobox > .custom-combobox-options > .options-elements > li:first-child {
-            border-radius: 3px 3px 0px 0px;
-        }
+            .custom-combobox > .custom-combobox-options > .options-elements > li:last-child {
+                border-bottom: none;
+                border-radius: 0px 0px 3px 3px;
+            }
 
-        .custom-combobox > .custom-combobox-options > .options-elements > li:last-child {
-            border-bottom: none;
-            border-radius: 0px 0px 3px 3px;
-        }
+            .custom-combobox > .custom-combobox-options > .options-elements > li:hover {
+                background-color: #9d9d9d;
+            }
 
-        .custom-combobox > .custom-combobox-options > .options-elements > li:hover {
-            background-color: #9d9d9d;
-        }
+            .custom-combobox > .custom-combobox-options > .options-elements > li:active {
+                background-color: #6f6e6e;
+            }
 
-        .custom-combobox > .custom-combobox-options > .options-elements > li:active {
-            background-color: #6f6e6e;
-        }
-
-        .custom-combobox > .custom-combobox-options > .options-elements > li span {
-            text-overflow: ellipsis;
-            white-space: nowrap;
-            overflow: hidden;
-            display: block;
-        }
+            .custom-combobox > .custom-combobox-options > .options-elements > li span {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                overflow: hidden;
+                display: block;
+            }
 
 
     /*Hover*/
     .custom-combobox:hover > .comboboxInputControl > label {
         background-color: #F1F1F1;
     }
-
-
-    /*Styling for select on popup mode*/
-    .custom-combobox > .custom-combobox-options-elements.isFloating > .options-elements > li {
-        padding: 12px 6px;
-    }
-
 
     /*Selected state*/
     .custom-combobox > .custom-combobox-options > .options-elements > li.selected {

@@ -340,12 +340,7 @@
             unselectItem: function (i) {
                 this.changeSelected(false, i);
             },
-            disableItem: function (i) {
-                this.changeDisabled(true, i);
-            },
-            enableItem: function (i) {
-                this.changeDisabled(false, i);
-            },
+          
 
             //Helper
             optionInOptions: function (text) {
@@ -379,15 +374,7 @@
                 option.optionsDiv.find('ul.options-elements li').eq(i).toggleClass('selected', selected);
                 option.setText();
             },
-            changeDisabled: function (disabled, i) {
-                var option = this.validateRange(i);
-                //Set disabled
-                option.E.children('option')[i].disabled = disabled;
-
-                option.optionsDiv.find('ul.options-elements li').eq(i).toggleClass('disabled', disabled);
-                option.setText();
-            },
-
+           
             //Get and set disabled
             get disabled() {
                 return this.E.attr('disabled') ? true : false;
