@@ -109,6 +109,10 @@
             },
             //Show optionsDiv
             showOptions: function () {
+
+                //Trigger optionsShowing
+                $(this).trigger('optionsShowing');
+
                 var option = this;
                 if (option.E.attr('disabled')) {
                     //Dont open if the control is disabled
@@ -119,14 +123,22 @@
                 option.select.addClass('focused');
                 option.optionsDiv.addClass('open');
 
+                //Trigger optionsShowed
+                $(this).trigger('optionsShowed');
             },
             //Hide optionsDiv
             hideOptions: function () {
+                //Trigger optionsClosing
+                $(this).trigger('optionsClosing');
+
                 var option = this;
                 option.is_opened = false;
                 option.backdrop.hide();
                 option.select.removeClass('focused');
                 option.optionsDiv.removeClass('open');
+
+                //Trigger optionsClosed
+                $(this).trigger('optionsClosed');
             },
 
             //Attach events
@@ -147,6 +159,8 @@
                 if (setting.is_editable) {
                     option.caption.focus(function () {
                         option.select.addClass('focused');
+
+                        $(option).trigger('inputFocused');
                     }).blur(function () {
                         option.select.removeClass('focused');
 
@@ -165,6 +179,8 @@
                             //Remove selected class
                             option.optionsDiv.find('li').removeClass('selected');
                         }
+
+                        $(option).trigger('selectedOptionChanged');
                     });
 
                 }
@@ -198,6 +214,7 @@
                     //Set new text
                     option.setText();
                     option.E.trigger('change');
+                    $(option).trigger('selectedOptionChanged');
 
                     //Hide optionsDiv
                     option.hideOptions();

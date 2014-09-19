@@ -43,6 +43,31 @@
                 is_editable: false
             });
 
+            combobox.optionsShowing = function () {
+                alert('showing');
+            };
+
+            combobox.optionsClosing = function () {
+                alert('optionsClosing');
+            };
+
+            combobox.optionsClosed = function () {
+                alert('optionsClosed');
+            };
+
+            combobox.optionsShowed = function () {
+                alert('optionsShowed');
+            };
+
+            combobox.inputFocused = function () {
+                alert('inputFocused');
+            };
+
+            combobox.selectedOptionChanged = function () {
+                alert('selectedOptionChanged');
+            };
+
+
             $('#comboboxGetValue').click(function () {
                 alert(combobox.getSelectedValue());
                 alert(comboboxReadonly.getSelectedValue());
