@@ -17,7 +17,7 @@
             return;
         }
 
-        var customCombobox  = {
+        var customCombobox = {
             E: $(selectedObj),  //jQuery Select element
             select: '',
             placeholder: setting.placeholder,
@@ -115,6 +115,7 @@
                 }
                 option.is_opened = true;
                 option.backdrop.show();
+                option.select.addClass('focused');
                 option.optionsDiv.addClass('open');
 
             },
@@ -123,8 +124,11 @@
                 var option = this;
                 option.is_opened = false;
                 option.backdrop.hide();
+                option.select.removeClass('focused');
                 option.optionsDiv.removeClass('open');
             },
+
+            //Attach events
             basicEvents: function () {
                 var option = this;
 
@@ -139,12 +143,38 @@
                     option.E.trigger('click');
                 });
 
+                if (setting.is_editable) {
+                    option.caption.focus(function () {
+                        option.select.addClass('focused');
+                    }).blur(function () {
+                        option.select.removeClass('focused');
+
+                        //Check if the new value is in the options
+                        var newValue = option.getText();
+                        var positionInOptions = option.optionInOptions(newValue);
+                        if (positionInOptions > -1) {
+                            //Select that new value
+                            option.selectItem(positionInOptions)
+                        }
+                        else {
+                            //Add new value and select it
+                            //option.add(newValue, newValue, 0);
+                            //option.selectItem(0);
+
+                            //Remove selected class
+                            option.optionsDiv.find('li').removeClass('selected');
+                        }
+                    });
+
+                }
+
                 //Backdrop click
                 option.backdrop.click(function () {
                     option.hideOptions();
                 });
 
                 option.E.on('blur', function () {
+                    option.select.removeClass('focused');
                     option.optionsDiv.removeClass('open');
                 });
             },
@@ -172,6 +202,7 @@
                     option.hideOptions();
                 });
             },
+
             setText: function () {
                 var option = this;
                 option.placeholder = "";
@@ -205,6 +236,24 @@
 
                 return option.placeholder;
             },
+            getText: function () {
+                var option = this;
+
+                return option.caption.val();
+            },
+            getSelectedValue: function () {
+                var option = this;
+
+                var currentText = option.getText();
+                var positionInOptions = option.optionInOptions(currentText);
+                if (positionInOptions > -1) {
+                    return option.getSelected();
+                }
+                else {
+                    return currentText;
+                }
+            },
+
 
             //Methods accessible from outside
             unload: function () {
@@ -258,6 +307,7 @@
                 return option.E.val();
             },
 
+
             //Remove option at index
             remove: function (i) {
                 var option = this.validateRange(i);
@@ -280,6 +330,18 @@
             },
 
             //Helper
+            optionInOptions: function (text) {
+                var option = this;
+                var index = -1;
+                $(option.E.children('option')).each(function (i, option) {
+                    option = $(option);
+                    if (option.text() == text) {
+                        index = i;
+                    }
+                });
+
+                return index;
+            },
             validateRange: function (i) {
                 var option = this;
                 var options = option.E.children('option');
