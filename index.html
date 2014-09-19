@@ -10,7 +10,6 @@
 <body>
 
     <button id="comboboxGetValue">Get value</button>
-    <button id="Button2">Custom combobox</button>
     <br />
     <select class="customEditableCombobox">
         <option value="value1">val 1</option>
@@ -35,9 +34,8 @@
             });
 
             $('#comboboxGetValue').click(function () {
-                console.log(combobox);
-                alert(combobox.getSelected());
-                alert(comboboxReadonly.getSelected());
+                alert(combobox.getSelectedValue());
+                alert(comboboxReadonly.getSelectedValue());
             });
 
         });
