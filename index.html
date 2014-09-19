@@ -11,26 +11,36 @@
 
     <button id="comboboxGetValue">Get value</button>
     <br />
-    <select class="customEditableCombobox">
-        <option value="value1">val 1</option>
-        <option value="value2">val 2</option>
-        <option value="value3">val 3</option>
-        <option value="value4">val 4</option>
+    <select class="customEditableDisabledCombobox" disabled="disabled">
+        <option value="val 1">val 1</option>
+        <option value="val 2">val 2</option>
+        <option value="val 3">val 3</option>
+        <option value="val 4">val 4</option>
     </select>
+    <br />
     <select class="customCombobox">
-        <option value="value1">val 1</option>
-        <option value="value2">val 2</option>
-        <option value="value3">val 3</option>
-        <option value="value4">val 4</option>
+        <option value="val 1">val 1</option>
+        <option value="val 2">val 2</option>
+        <option value="val 3">val 3</option>
+        <option value="val 4">val 4</option>
     </select>
+    <br />
+    <select class="customEditableCombobox">
+        <option value="val 1">val 1</option>
+        <option value="val 2">val 2</option>
+        <option value="val 3">val 3</option>
+        <option value="val 4">val 4</option>
+    </select>
+
+
+
     <script>
 
         $(document).ready(function () {
             var combobox = $('.customEditableCombobox').customEditableCombobox();
+            var comboboxEditableDisabled = $('.customEditableDisabledCombobox').customEditableCombobox();
             var comboboxReadonly = $('.customCombobox').customEditableCombobox({
-                is_editable: false,
-                caption: 'Luda select lista',
-                placeholder:'unesi'
+                is_editable: false
             });
 
             $('#comboboxGetValue').click(function () {

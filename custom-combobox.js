@@ -42,10 +42,11 @@
 
                     element.caption.attr('readonly', 'readonly');
                 }
-
-                //Check if it is editable
-                if (setting.is_editable) {
-                    element.caption.removeAttr('readonly');
+                else {
+                    //Check if it is editable
+                    if (setting.is_editable) {
+                        element.caption.removeAttr('readonly');
+                    }
                 }
 
                 //Hide original Select element
@@ -379,9 +380,11 @@
                 option.select.toggleClass('disabled', value);
                 if (value) {
                     option.E.attr('disabled', 'disabled');
+                    option.caption.attr('disabled', 'disabled');
                 }
                 else {
                     option.E.removeAttr('disabled');
+                    option.caption.removeAttr('disabled');
                 }
             },
 

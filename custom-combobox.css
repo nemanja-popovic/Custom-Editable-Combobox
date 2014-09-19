@@ -6,12 +6,10 @@
     font-family: calibri;
 }
 
-.custom-selectbox {
-    width: 200px;
-    padding: 5px;
-}
-
-/*this is applied on that hidden select. DO NOT USE display:none; or visiblity:hidden; and Do not override any of these properties. */
+/*this is applied on the hidden select. 
+    DO NOT USE display:none; or visiblity:hidden;
+    and 
+    Do not override any of these properties. */
 .customComboboxSelect {
     position: absolute;
     top: 0px;
@@ -35,6 +33,9 @@
     -moz-transition: 200ms ease;
     -webkit-transition: 200ms ease;
     transition: 200ms ease;
+    padding: 4px 6px;
+    border-bottom: 2px solid #F3F3F3;
+    position: relative;
 }
 
     .custom-combobox > .custom-combobox-options > .options-elements > li span, .custom-combobox > .comboboxInputControl {
@@ -44,6 +45,11 @@
         -khtml-user-select: none;
         -webkit-user-select: none;
     }
+
+
+.custom-selectbox {
+    padding: 5px 2px;
+}
 
 .custom-combobox {
     display: inline-block;
@@ -59,14 +65,14 @@
     }
 
     .custom-combobox.focused > .comboboxInputControl {
-        box-shadow: 0 0 5px rgba(81, 203, 238, 1);
-        /*padding: 3px 0px 3px 3px;*/
-        /*margin: 5px 1px 3px 0px;*/
-        border: 2px solid rgba(81, 203, 238, 1);
+        box-shadow: 0 0 5px #c7c7c7;
+        border: 2px solid #9d9d9d;
     }
 
     .custom-combobox > .comboboxInputControl > input {
         display: block;
+        height: 18px;
+        margin-left: 3px;
         padding-right: 30px;
         text-overflow: ellipsis;
         white-space: nowrap;
@@ -90,8 +96,6 @@
     }
 
         .custom-combobox > .comboboxInputControl > label > i {
-            background-image: url('data:image/svg+xml;charset=US-ASCII,%3C%3Fxml%20version%3D%221.0%22%20encoding%3D%22iso-8859-1%22%3F%3E%3C!DOCTYPE%20svg%20PUBLIC%20%22-%2F%2FW3C%2F%2FDTD%20SVG%201.1%2F%2FEN%22%20%22http%3A%2F%2Fwww.w3.org%2FGraphics%2FSVG%2F1.1%2FDTD%2Fsvg11.dtd%22%3E%3Csvg%20version%3D%221.1%22%20id%3D%22Layer_1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20xmlns%3Axlink%3D%22http%3A%2F%2Fwww.w3.org%2F1999%2Fxlink%22%20x%3D%220px%22%20y%3D%220px%22%20%20width%3D%2214px%22%20height%3D%2214px%22%20viewBox%3D%220%200%2014%2014%22%20style%3D%22enable-background%3Anew%200%200%2014%2014%3B%22%20xml%3Aspace%3D%22preserve%22%3E%3Cpath%20fill%3D%22%23FFF%22%20d%3D%22M1%2C10l-1%2C4l4-1l7-7L8%2C3L1%2C10z%20M11%2C0L9%2C2l3%2C3l2-2L11%2C0z%22%2F%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3Cg%3E%3C%2Fg%3E%3C%2Fsvg%3E');
-            background-position: center center;
             width: 16px;
             height: 16px;
             display: block;
@@ -102,6 +106,10 @@
             bottom: 0px;
             margin: auto;
         }
+
+            .custom-combobox > .comboboxInputControl > label > i::after {
+                content: " \25BC";
+            }
 
     .custom-combobox > .custom-combobox-options {
         top: 30px;
@@ -138,91 +146,57 @@
             padding: 0px;
             margin: 0px;
             overflow: auto;
-            border-radius: 3px; /*Set the height of pop up here (only for desktop mode)*/
-            max-height: 250px; /*height*/
+            border-radius: 3px;
+            max-height: 250px;
         }
 
         .custom-combobox > .custom-combobox-options.isFloating > .options-elements {
             max-height: 100%;
         }
 
-        .custom-combobox > .custom-combobox-options > .options-elements > li {
-            padding: 4px 6px;
-            border-bottom: 2px solid #F3F3F3;
-            position: relative;
+
+        .custom-combobox > .custom-combobox-options > .options-elements > li:first-child {
+            border-radius: 3px 3px 0px 0px;
         }
 
-            .custom-combobox > .custom-combobox-options > .options-elements > li:first-child {
-                border-radius: 3px 3px 0px 0px;
-            }
-
-            .custom-combobox > .custom-combobox-options > .options-elements > li:last-child {
-                border-bottom: none;
-                border-radius: 0px 0px 3px 3px;
-            }
-
-            .custom-combobox > .custom-combobox-options > .options-elements > li:hover {
-                background-color: #CBD0FF;
-            }
-
-            .custom-combobox > .custom-combobox-options > .options-elements > li span {
-                text-overflow: ellipsis;
-                white-space: nowrap;
-                overflow: hidden;
-                display: block;
-            }
-
-
-        /*Floating styles*/
-        .custom-combobox > .custom-combobox-options.isFloating {
-            position: fixed;
-            top: 0px;
-            left: 0px;
-            right: 0px;
-            width: 90%;
-            bottom: 0px;
-            margin: auto;
-            max-height: 90%;
+        .custom-combobox > .custom-combobox-options > .options-elements > li:last-child {
+            border-bottom: none;
+            border-radius: 0px 0px 3px 3px;
         }
+
+        .custom-combobox > .custom-combobox-options > .options-elements > li:hover {
+            background-color: #9d9d9d;
+        }
+
+        .custom-combobox > .custom-combobox-options > .options-elements > li:active {
+            background-color: #6f6e6e;
+        }
+
+        .custom-combobox > .custom-combobox-options > .options-elements > li span {
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            overflow: hidden;
+            display: block;
+        }
+
 
     /*Hover*/
     .custom-combobox:hover > .comboboxInputControl > label {
         background-color: #F1F1F1;
     }
 
-    /*disabled state*/
-    .custom-combobox > .custom-combobox-options > .options-elements > li.disabled {
-        background-color: inherit;
-    }
 
-        .custom-combobox > .custom-combobox-options > .options-elements > li.disabled * {
-            -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE 5-7 */
-            filter: alpha(opacity=50); /* Netscape */
-            -moz-opacity: 0.5; /* Safari 1.x */
-            -khtml-opacity: 0.5; /* Good browsers */
-            opacity: 0.5;
-        }
-
-
-    /*styling for select on popup mode*/
+    /*Styling for select on popup mode*/
     .custom-combobox > .custom-combobox-options-elements.isFloating > .options-elements > li {
         padding: 12px 6px;
     }
 
 
-    /*selected state*/
+    /*Selected state*/
     .custom-combobox > .custom-combobox-options > .options-elements > li.selected {
         background-color: #7d7d7d;
     }
 
-    /*disabled state*/
-    .custom-combobox.disabled {
-        opacity: 0.7;
-    }
-
-        .custom-combobox.disabled > .comboboxInputControl > label {
-            background-color: #F1F1F1;
-        }
 /*Background overlay*/
 body > .customComboboxCloseDiv {
     display: none;
