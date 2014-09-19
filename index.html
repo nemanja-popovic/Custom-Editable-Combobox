@@ -40,7 +40,7 @@
 
 <p>A jQuery plugin that creates custom editable select lists.</p>
 
-<p>Custom-Editable-Combobox allows you to quickly create custom editable combobox for use in web applications and websites. The combobox is easily customisable changing the css styles and provides flexability with options in select.</p>
+<p>Custom-Editable-Combobox allows you to quickly create custom editable combobox for use in web applications and websites. The combobox is easily customisable by changing the css styles and provides flexability with options in select.</p>
 
 <hr><h2>
 <a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
@@ -72,6 +72,29 @@
 	<br/>
 	<h4>Javascript</h4>
 	<pre><code>var cmb = $('#customEditableCombobox').customEditableCombobox();</code></pre>
+	<hr>
+	
+	<h4>Custom non-editable combobox</h4>
+   <select id="customCombobox">
+        <option value="val 1" selected="selected">val 1</option>
+        <option value="val 2">val 2</option>
+        <option value="val 3">val 3</option>
+        <option value="val 4">val 4</option>
+    </select>
+	
+	<hr>
+	<h4>HTML</h4>
+	<pre style="white-space: pre-wrap">&lt;select id="customCombobox"&gt;
+        &lt;option value="val 1" selected="selected"&gt;val 1&lt;/option&gt;
+        &lt;option value="val 2"&gt;val 2&lt;/option&gt;
+        &lt;option value="val 3"&gt;val 3&lt;/option&gt;
+        &lt;option value="val 4"&gt;val 4&lt;/option&gt;
+    &lt;/select&gt;</pre>
+	<br/>
+	<h4>Javascript</h4>
+	<pre><code>var cmb = $('#customCombobox').customEditableCombobox({
+                is_editable: false
+            });</code></pre>
 	
 <hr><h2>
 <a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
@@ -93,7 +116,7 @@
 &lt;/select&gt;	</code></pre>
 </p>
 
-<p>Attach the toolbar to an element passing in your options as an object. Available options are detailed below.<br/>
+<p>Attach the combobox to an element passing in your options as an object. Available options are detailed below.<br/>
 <pre><code>var combobox = $('#customCombobox').customEditableCombobox(options);</code></pre></p>
 
 <hr><h2>
@@ -113,26 +136,31 @@
 <p>Below is a list of methods available on the elements that already have a editable combobox instantiated</p>
 
 <table>
-	<tr><th>Method</th><th>Description</th></tr>
+	<tr><th>Method</th><th>Arguments</th><th>Description</th></tr>
 	<tr>
 		<td>getSelectedValue</td>
-		<td></td>
+		<td>None</td>
+		<td>Returns currently selected value</td>
 	</tr>
 	<tr>
 		<td>add</td>
-		<td></td>
+		<td>Value, Text, Position</td>
+		<td>Add new option to combobox</td>
 	</tr>
 	<tr>
 		<td>remove</td>
-		<td></td>
+		<td>Position</td>
+		<td>Removes option from chosen position</td>
 	</tr>
 	<tr>
 		<td>selectItem</td>
-		<td></td>
+		<td>Position</td>
+		<td>Select option at chosen position</td>
 	</tr>
 	<tr>
 		<td>unload</td>
-		<td></td>
+		<td>None</td>
+		<td>Unloads the custom combobox element</td>
 	</tr>
 </table>
 
@@ -142,7 +170,7 @@
 <p>Below are a list of events that are triggered when certain events happen with the editable combobox. You can listen for these events using the .on method.</p>
 
 <p>For example.
-<pre><code>$('#element').on('toolbarShown',
+<pre><code>$('#element').on('selectedOptionChanged',
     function( event ) {
         // this: the element the custom combobox is attached to
     }
@@ -151,31 +179,31 @@
 	<tr><th>Event</th><th>Description</th></tr>
 	<tr>
 		<td>optionsShowing</td>
-		<td></td>
+		<td>Triggered before the options are shown.</td>
 	</tr>
 	<tr>
 		<td>optionsShowed</td>
-		<td></td>
+		<td>Triggered after the options are shown.</td>
 	</tr>
 	<tr>
 		<td>optionsClosing</td>
-		<td></td>
+		<td>Triggered before the options are closed.</td>
 	</tr>
 	<tr>
 		<td>optionsClosed</td>
-		<td></td>
+		<td>Triggered after the options are closed.</td>
 	</tr>
 	<tr>
 		<td>inputFocused</td>
-		<td></td>
+		<td>Triggered when the combobox input get focus.</td>
 	</tr>
 	<tr>
 		<td>selectedOptionChanged</td>
-		<td></td>
+		<td>Triggered when the new item is selected.</td>
 	</tr>
 </table>
 <hr><h3>
-<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Author</h3>
 
 <p>Built by Nemanja Popovic (<a href="https://github.com/nemanja23031991" class="user-mention">@nemanja23031991</a>) in 2014.</p>
 

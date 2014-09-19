@@ -414,4 +414,7 @@
 
 $(document).ready(function(){
 	var editableCombobox = $('#customEditableCombobox').customEditableCombobox();
+	var nonEditableCombobox = $('#customCombobox').customEditableCombobox({
+                is_editable: false
+            });
 });
