@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <link href='https://fonts.googleapis.com/css?family=Chivo:900' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+    <title>Custom-editable-combobox by nemanja23031991</title>
+  </head>
+
+  <body>
+    <div id="container">
+      <div class="inner">
+
+        <header>
+          <h1>Custom-editable-combobox</h1>
+          <h2>Editable Combobox / Select control</h2>
+        </header>
+
+        <section id="downloads" class="clearfix">
+          <a href="https://github.com/nemanja23031991/Custom-Editable-Combobox/zipball/master" id="download-zip" class="button"><span>Download .zip</span></a>
+          <a href="https://github.com/nemanja23031991/Custom-Editable-Combobox/tarball/master" id="download-tar-gz" class="button"><span>Download .tar.gz</span></a>
+          <a href="https://github.com/nemanja23031991/Custom-Editable-Combobox" id="view-on-github" class="button"><span>View on GitHub</span></a>
+        </section>
+
+        <hr>
+
+        <section id="main_content">
+          <h3>
+<a name="custom-editable-combobox" class="anchor" href="#custom-editable-combobox"><span class="octicon octicon-link"></span></a>Custom-Editable-Combobox</h3>
+
+<p>A jQuery plugin that creates custom editable select lists.</p>
+
+<p>Custom-Editable-Combobox allows you to quickly create custom editable combobox for use in web applications and websites. The combobox is easily customisable changing the css styles and provides flexability with options in select.</p>
+
+<hr><h2>
+<a name="features" class="anchor" href="#features"><span class="octicon octicon-link"></span></a>Features</h2>
+
+<ul>
+<li>Straightforward implementation with simple options</li>
+<li>Can run as many editable comboboxes as required</li>
+<li>Comboboxes can be attached to any element required</li>
+<li>Comboboxes look and feel is easily customised through the small css file</li>
+</ul><hr><h2>
+<a name="examples" class="anchor" href="#examples"><span class="octicon octicon-link"></span></a>Examples</h2>
+
+<p>``</p>
+
+<hr><h2>
+<a name="usage" class="anchor" href="#usage"><span class="octicon octicon-link"></span></a>Usage</h2>
+
+<p>Include the plugin javascript file along with jquery
+<code>&lt;script src="jquery.min.js"&gt;&lt;/script&gt;
+    &lt;script src="custom-combobox.js"&gt;&lt;/script&gt;</code></p>
+
+<p>Include css file
+<code>&lt;link href="custom-combobox.css" rel="stylesheet" /&gt;</code></p>
+
+<p>Define your combobox HTML
+<code>&lt;select id="customCombobox"&gt;
+        &lt;option value="val 1" selected="selected"&gt;val 1&lt;/option&gt;
+        &lt;option value="val 2"&gt;val 2&lt;/option&gt;
+        &lt;option value="val 3"&gt;val 3&lt;/option&gt;
+        &lt;option value="val 4"&gt;val 4&lt;/option&gt;
+    &lt;/select&gt;</code></p>
+
+<p>Attach the toolbar to an element passing in your options as an object. Available options are detailed below.
+<code>var combobox = $('#customCombobox').customEditableCombobox(options);</code></p>
+
+<hr><h2>
+<a name="options" class="anchor" href="#options"><span class="octicon octicon-link"></span></a>Options</h2>
+
+<p>option - description
+*is_editable - Choose if you want the combobox to be editable. Default: true. </p>
+
+<hr><h2>
+<a name="methods" class="anchor" href="#methods"><span class="octicon octicon-link"></span></a>Methods</h2>
+
+<p>Below is a list of methods available on the elements that already have a editable combobox instantiated</p>
+
+<p>Method - Description
+*getSelectedValue - 
+*unload -
+*add - 
+*remove - 
+*selectItem -</p>
+
+<hr><h2>
+<a name="events" class="anchor" href="#events"><span class="octicon octicon-link"></span></a>Events</h2>
+
+<p>Below are a list of events that are triggered when certain events happen with the editable combobox. You can listen for these events using the .on method.</p>
+
+<p>For example.
+<code>$('#element').on('toolbarShown',
+    function( event ) {
+        // this: the element the custom combobox is attached to
+    }
+);</code></p>
+
+<p>Event - DEscription
+*optionsShowing -
+*optionsShowed - 
+*optionsClosing - 
+*optionsClosed -
+*inputFocused -
+*selectedOptionChanged -  </p>
+
+<hr><h3>
+<a name="authors-and-contributors" class="anchor" href="#authors-and-contributors"><span class="octicon octicon-link"></span></a>Authors and Contributors</h3>
+
+<p>Built by Nemanja Popovic (<a href="https://github.com/nemanja23031991" class="user-mention">@nemanja23031991</a>) in 2014.</p>
+
+<hr><h3>
+<a name="support-or-contact" class="anchor" href="#support-or-contact"><span class="octicon octicon-link"></span></a>Support or Contact</h3>
+
+<p>Having trouble with Custom-Editable-Combobox? Check out the documentation at <a href="https://github.com/nemanja23031991/Custom-Editable-Combobox">https://github.com/nemanja23031991/Custom-Editable-Combobox</a> or contact <a href="mailto:nemanja23031991@yahoo.com">nemanja23031991@yahoo.com</a> and we’ll help you sort it out.</p>
+        </section>
+
+        <footer>
+          Custom-editable-combobox is maintained by <a href="https://github.com/nemanja23031991">nemanja23031991</a><br>
+          This page was generated by <a href="http://pages.github.com">GitHub Pages</a>. Tactile theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.
+        </footer>
+
+        
+      </div>
+    </div>
+  </body>
+</html>
