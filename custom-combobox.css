@@ -6,10 +6,7 @@
     font-family: calibri;
 }
 
-/*this is applied on the hidden select. 
-    DO NOT USE display:none; or visiblity:hidden;
-    and 
-    Do not override any of these properties. */
+
 .customComboboxSelect {
     position: absolute;
     top: 0px;
