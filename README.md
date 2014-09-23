@@ -3,6 +3,8 @@ Custom-Editable-Combobox
 
 A jQuery plugin that creates custom editable select lists.
 
+Examples at http://nemanja23031991.github.io/Custom-Editable-Combobox/
+
 License
 
 (This project is released under the MIT license.)
